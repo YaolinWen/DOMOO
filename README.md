@@ -192,5 +192,6 @@ Results are saved to `./result/DOMOO-Vallina-DTLZ3-Exact-v0/` including HV and I
 This project builds upon valuable work from the following repositories:
 - Benchmarks: [Off-MOO-Bench](https://github.com/lamda-bbo/offline-moo)
 - Pareto Set Learning: [PSL-MOBO](https://github.com/Xi-L/PSL-MOBO)
+- Risk Control: [ARCOO](https://github.com/luhuakang/ARCOO)
 
 We extend our sincere thanks to the creators of these projects for their contributions to the field and for making their code available. 🙌
