@@ -20,7 +20,7 @@ The DOMOO framework contains three main stages:
 
 - **(a) Surrogate & Risk Modeling:** Train per-objective surrogate models on the offline dataset, and energy-based models for OOD risk quantification.
 - **(b) Nested Pareto Set Learning (NPSL) with Risk Control:** Jointly optimize the Pareto set model and preference vectors in a nested manner. The inner loop updates preferences via risk-modulated gradient descent, exploring underrepresented regions while suppressing OOD-prone steps. The outer loop trains the Pareto set model under these risk-guided preferences.
-- **(c) Diversity-Driven Solution Selection:** Generate candidate solutions from both the Pareto set model and surrogate model, then select a diverse and well-converged subset using the IGD_off and HV indicators.
+- **(c) Diversity-Driven Solution Selection:** Generate candidate solutions from both the Pareto set model and surrogate model, then select a diverse and well-converged subset using the $\text{IGD}_\text{offline}$ and HV indicators.
 
 ## 📖 Introduction
 Multi-objective optimization (MOO) is widely used in fields ranging from neural architecture search to antenna design, where practitioners must balance conflicting goals. In many practical scenarios, evaluating true objective functions can be prohibitively expensive or hazardous, necessitating optimization solely based on a fixed offline dataset. This offline MOO setting suffers from the out-of-distribution (OOD) issue, where surrogate models produce unreliable predictions for unseen designs.
@@ -68,13 +68,13 @@ python scripts/black_box_opt.py optimizer=mf_genetic optimizer/algorithm=nsga2 t
 cd ../../../..
 ```
 
-5. Fix normalization bugs (both versions affected) and add IGD_off to baselines:
+5. Fix normalization bugs (both versions affected) and add $\text{IGD}_\text{offline}$ to baselines:
 ```bash
 # Fix normalization in official Off-MOO-Bench
 cp ./replace/dataset_builder_original.py ./baseline/offline-moo/off_moo_bench/datasets/dataset_builder.py
 # Fix normalization in ParetoFlow version
 cp ./replace/dataset_builder_paretoflow.py ./DOMOO/offline_moo/off_moo_bench/datasets/dataset_builder.py
-# Add IGD_off evaluation to baseline methods
+# Add $\text{IGD}_\text{offline}$ evaluation to baseline methods
 cp ./replace/experiment_end2end.py ./baseline/offline-moo/off_moo_baselines/end2end/experiment.py
 cp ./replace/experiment_mobo.py ./baseline/offline-moo/off_moo_baselines/mobo/experiment.py
 cp ./replace/experiment_multi_head.py ./baseline/offline-moo/off_moo_baselines/multi_head/experiment.py
@@ -150,7 +150,7 @@ python domoo.py \
   --normalization True
 ```
 
-Results are saved to `./result/DOMOO-Vallina-DTLZ3-Exact-v0/` including HV and IGD_off metrics.
+Results are saved to `./result/DOMOO-Vallina-DTLZ3-Exact-v0/` including HV and $\text{IGD}_\text{offline}$ metrics.
 
 ## 🔧 Key Arguments
 
@@ -172,7 +172,7 @@ Results are saved to `./result/DOMOO-Vallina-DTLZ3-Exact-v0/` including HV and I
 | `--multiple_model_results` | — | Path to cached MultipleModels-Vallina results |
 | `--no_energy` | `False` | Ablation: disable risk control |
 | `--no_bilevel` | `False` | Ablation: disable nested PSL |
-| `--no_igdoff` | `False` | Ablation: disable IGD_off selection |
+| `--no_igdoff` | `False` | Ablation: disable $\text{IGD}_\text{offline}$ selection |
 | `--no_psl` | `False` | Ablation: use surrogate only (w.o. PSMG) |
 | `--no_surrogate` | `False` | Ablation: use PSL only (w.o. SMG) |
 
