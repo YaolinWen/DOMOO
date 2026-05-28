@@ -5,15 +5,15 @@
 <p><strong>ICML 2026</strong></p>
 
 <p>
-  <em>Yiyi Zhu<sup>*</sup></em>,
-  <em>Yaolin Wen<sup>*</sup></em>,
-  <em>Xiang Xia<sup>*</sup></em>,
+  Yiyi Zhu<sup>*</sup>,
+  Yaolin Wen<sup>*</sup>,
+  Xiang Xia<sup>*</sup>,
   Xin An,
   Hanyi Si,
   Xiang Shu,
   Yangde Fu,
   Liang Dou,
-  <strong>Hong Qian</strong><sup>†</sup>
+  Hong Qian<sup>†</sup>
 </p>
 
 <p>
