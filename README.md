@@ -1,18 +1,42 @@
 <div align="center">
 
-### Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning
+<h1>Diversity-Driven Offline Multi-Objective Optimization<br>via Nested Pareto Set Learning</h1>
 
-[![ICML](https://img.shields.io/badge/ICML-2026-2f6fbb)](https://icml.cc/)
-[![Python](https://img.shields.io/badge/Python-3.8%2B-3776ab)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-required-ee4c2c)](https://pytorch.org/)
+<p><strong>ICML 2026</strong></p>
 
-Official implementation of **DOMOO**, accepted by **ICML 2026**.
+<p>
+  <em>Yiyi Zhu<sup>*</sup></em>,
+  <em>Yaolin Wen<sup>*</sup></em>,
+  <em>Xiang Xia<sup>*</sup></em>,
+  Xin An,
+  Hanyi Si,
+  Xiang Shu,
+  Yangde Fu,
+  Liang Dou,
+  <strong>Hong Qian</strong><sup>†</sup>
+</p>
+
+<p>
+  <sup>*</sup> Equal contribution &nbsp; <sup>†</sup> Corresponding author
+</p>
+
+<p>
+  Shanghai Institute of AI for Education, East China Normal University, Shanghai, China<br>
+  Ant Group, Hangzhou, China &nbsp;|&nbsp; Shanghai Innovation Institute, Shanghai, China
+</p>
+
+<p>
+  <a href="paper/paper.pdf"><img src="https://img.shields.io/badge/Paper-PDF-orange" alt="Paper PDF"></a>
+  <a href="https://github.com/YaolinWen/DOMOO"><img src="https://img.shields.io/badge/Code-GitHub-black" alt="GitHub Repository"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Conference-ICML%202026-blue" alt="ICML 2026"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Python-3.8%2B-3776ab" alt="Python 3.8+"></a>
+</p>
+
+<img src="picture/DOMOO.png" width="820" alt="DOMOO framework" />
 
 </div>
 
-<div style="text-align: center;">
-  <img src="picture/DOMOO.png" alt="DOMOO method" width="700">
-</div>
+------
 
 ## 🖼️ Framework
 
@@ -23,11 +47,16 @@ The DOMOO framework contains three main stages:
 - **(c) Diversity-Driven Solution Selection:** Generate candidate solutions from both the Pareto set model and surrogate model, then select a diverse and well-converged subset using the $\text{IGD}_\text{offline}$ and HV indicators.
 
 ## 📖 Introduction
+
+<div style="text-align: justify;">
+
 Multi-objective optimization (MOO) is widely used in fields ranging from neural architecture search to antenna design, where practitioners must balance conflicting goals. In many practical scenarios, evaluating true objective functions can be prohibitively expensive or hazardous, necessitating optimization solely based on a fixed offline dataset. This offline MOO setting suffers from the out-of-distribution (OOD) issue, where surrogate models produce unreliable predictions for unseen designs.
 
 Due to the OOD issue, surrogate errors may cause the optimizer to select solutions that do not lie on the true Pareto front and are biased toward its extremes, leading to a severely imbalanced Pareto front with degraded diversity and convergence.
 
 To address this, we propose Diversity-Driven Offline Multi-Objective Optimization (DOMOO), a Nested Pareto Set Learning (NPSL) framework designed to find diverse and high-quality solutions. DOMOO incorporates an accumulative risk control module that estimates the potential risk of candidate solutions and alleviates the OOD issue between the training data and the generated solutions. In addition, a nested PSL strategy jointly learns preference-conditioned mappings and optimizes preference vectors under accumulative risk control, enabling adaptation to diverse Pareto front geometries. To further enhance solution quality, we design a diversity-driven selection strategy with a novel $\text{IGD}_\text{offline}$ indicator tailored for the offline setting, which balances diversity and convergence while avoiding the bias of the hypervolume indicator. Extensive experiments on synthetic and real-world benchmarks show that DOMOO achieves the best average rank across tasks over comparable offline MOO methods.
+
+</div>
 
 ## 📦 Setup Environment
 
@@ -182,7 +211,7 @@ Results are saved to `./result/DOMOO-Vallina-DTLZ3-Exact-v0/` including HV and $
 @inproceedings{domoo,
   title     = {Diversity-Driven Offline Multi-Objective Optimization via Nested Pareto Set Learning},
   author    = {Yiyi Zhu, Yaolin Wen, Xiang Xia, Xin An, Hanyi Si, Xiang Shu, Yangde Fu, Liang Dou, Hong Qian},
-  booktitle = {Proceedings of the 43rd International Conference on Machine Learning},
+  booktitle = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
   year      = {2026},
   address   = {Seoul, Korea}
 }
