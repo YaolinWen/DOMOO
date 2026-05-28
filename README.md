@@ -121,27 +121,27 @@ pip install -r requirements.txt
 
 ## 📥 Project Structure
 ```
-├── DOMOO/                     # DOMOO source code
-│   ├── domoo.py               # Main entry point
-│   ├── energy_model.py        # Energy-based risk model
-│   ├── utils.py               # Utility functions (PSL training, evaluation)
-│   ├── exper.py               # Argument parser & task-specific defaults
-│   ├── process_result_hv.py   # HV ranking script
-│   └── process_result_igdoff.py
-├── scripts/                   # Shell scripts for batch experiments
-│   ├── run.sh                 # Full pipeline
-│   ├── domoo_main.sh          # Main experiments
-│   ├── domoo_ablation1.sh     # w.o. ARC
-│   ├── domoo_ablation2.sh     # w.o. NPSL
-│   ├── domoo_ablation3.sh     # w.o. DDSS
-│   ├── domoo_ablation4.sh     # w.o. PSMG
-│   └── domoo_ablation5.sh     # w.o. SMG
-├── replace/                   # Bug-fix patches for Off-MOO-Bench
-├── picture/                   # Method illustration
-├── baseline/                  # Official Off-MOO-Bench (for baselines)
-│   └── offline-moo/           #   after setup
-├── DOMOO/offline_moo →        # Symlink to ParetoFlow's modified version
-│   ParetoFlow/experiments/offline_moo
+├── DOMOO/                          # DOMOO source code
+│   ├── domoo.py                    # Main entry point
+│   ├── energy_model.py             # Energy-based risk model
+│   ├── utils.py                    # Utility functions (PSL training, evaluation)
+│   ├── exper.py                    # Argument parser & task-specific defaults
+│   ├── process_result_hv.py        # HV ranking script
+│   ├── process_result_igdoff.py    # IGD_off ranking script
+│   └── offline_moo →               # Symlink to ParetoFlow's modified Off-MOO-Bench
+│       (ParetoFlow/experiments/offline_moo)
+├── scripts/                        # Shell scripts for batch experiments
+│   ├── run.sh
+│   ├── domoo_main.sh
+│   ├── domoo_ablation1.sh          # w.o. ARC
+│   ├── domoo_ablation2.sh          # w.o. NPSL
+│   ├── domoo_ablation3.sh          # w.o. DDSS
+│   ├── domoo_ablation4.sh          # w.o. PSMG
+│   └── domoo_ablation5.sh          # w.o. SMG
+├── replace/                        # Bug-fix patches for Off-MOO-Bench
+├── picture/                        # Method illustration
+├── baseline/                       # Official Off-MOO-Bench (for baselines)
+│   └── offline-moo/
 ├── requirements.txt
 └── README.md
 ```
