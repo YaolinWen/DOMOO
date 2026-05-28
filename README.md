@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  Shanghai Institute of AI for Education, East China Normal University, Shanghai, China<br>
+  Shanghai Institute of AI for Education and School of Computer Science and Technology, East China Normal University, Shanghai, China<br>
   Ant Group, Hangzhou, China &nbsp;|&nbsp; Shanghai Innovation Institute, Shanghai, China
 </p>
 
