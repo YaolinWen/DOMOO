@@ -21,9 +21,7 @@
 </p>
 
 <p>
-  East China Normal University<br>
-  Ant Group<br>
-  Shanghai Innovation Institute
+  East China Normal University &nbsp;|&nbsp; Ant Group &nbsp;|&nbsp; Shanghai Innovation Institute
 </p>
 
 <p>
